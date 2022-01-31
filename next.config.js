@@ -29,7 +29,7 @@ module.exports = (phase) => {
       email_id: "disc0der@outlook.com",
       email_pass: "naneepappi@123",
       jwt_secret: "7cYF43X$33Mb143",
-      domain : "https://minirealestateapp.vercel.app/"
+      domain : "https://mini-realestate-app.vercel.app/"
     },
   };
 };
