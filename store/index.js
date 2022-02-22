@@ -2,7 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
 
 const initialSessionState = {
-  loggedIn: false,
+  loggedIn: true,
 };
 
 const sessionSlice = createSlice({
