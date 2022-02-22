@@ -20,9 +20,9 @@ module.exports = (phase) => {
   return {
     reactStrictMode: true,
     env: {
-      mysql_username: "sql6469432",
-      mysql_password: "IBUBubmpIy",
-      mysql_dbname: "sql6469432",
+      mysql_username: "sql6474609",
+      mysql_password: "wXfL9vJyH",
+      mysql_dbname: "sql6474609",
       mysql_host: "sql6.freemysqlhosting.net",
       mysql_port: "3306",
       db_ssl: false,
@@ -33,5 +33,5 @@ module.exports = (phase) => {
     },
   };
 };
-//tparjonigrftgnosgt@kvhrr.com
+//lzbafdliwskmvokaww@bvhrk.com
 //12345
