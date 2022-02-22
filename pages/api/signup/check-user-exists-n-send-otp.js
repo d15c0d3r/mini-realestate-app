@@ -19,6 +19,7 @@ const transporter = nodemailer.createTransport({
 const handler = (req, res) => {
   if (req.method === "POST") {
     const { email, name, contact, password } = req.body;
+    console.log(req.body)
     db.query(
       `SELECT * FROM USERS WHERE EMAIL = "${email}"`,
       (error, result) => {
