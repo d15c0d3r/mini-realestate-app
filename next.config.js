@@ -21,7 +21,7 @@ module.exports = (phase) => {
     reactStrictMode: true,
     env: {
       mysql_username: "sql6474609",
-      mysql_password: "wXfL9vJyH",
+      mysql_password: "1wXfL9vJyH",
       mysql_dbname: "sql6474609",
       mysql_host: "sql6.freemysqlhosting.net",
       mysql_port: "3306",
