@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 const handler = (req, res) => {
   if (req.method === "POST") {
     const { email, name, contact, password } = req.body;
-    console.log(req.body)
+    console.log(email);
     db.query(
       `SELECT * FROM USERS WHERE EMAIL = "${email}"`,
       (error, result) => {
@@ -29,6 +29,7 @@ const handler = (req, res) => {
             .json({ message: "Something went wrong, try again later" });
           return;
         }
+        console.log(result);
         if (result.length !== 0) {
           res.status(400).json({ message: "User already exists" });
           return;
@@ -42,6 +43,7 @@ const handler = (req, res) => {
                 .json({ message: "Something went wrong, try again later" });
               return;
             }
+            console.log(result);
             if (result.length !== 0) {
               db.query(
                 `DELETE FROM OTPS WHERE EMAIL = "${email}"`,
@@ -67,11 +69,13 @@ const handler = (req, res) => {
         );
         transporter.sendMail(options, (error, info) => {
           if (error) {
+            console.log(error);
             res.status(500).json({
               message: "Something went wrong with the server, try again later",
             });
             return;
           }
+          console.log("email sent");
           db.query(
             `INSERT INTO OTPS VALUES ("${email}", ${otp}, "${new Date().toString()}")`,
             (error, result) => {
