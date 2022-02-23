@@ -20,9 +20,6 @@ module.exports = (phase) => {
   return {
     reactStrictMode: true,
     env: {
-      mysql_username: "sql6469432",
-      mysql_password: "IBUBubmpIy",
-      mysql_dbname: "sql6469432",
       mysql_host: "sql6.freemysqlhosting.net",
       mysql_port: "3306",
       db_email: "lzbafdliwskmvokaww@bvhrk.com",
@@ -32,6 +29,9 @@ module.exports = (phase) => {
       email_pass: "naneepappi@123",
       jwt_secret: "7cYF43X$33Mb143",
       domain: "https://mini-realestate-app.vercel.app/",
+      mysql_username: "sql6474609",
+      mysql_password: "1wXfL9vJyH",
+      mysql_dbname: "sql6474609",
     },
   };
 };
