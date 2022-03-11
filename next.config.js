@@ -29,9 +29,9 @@ module.exports = (phase) => {
       email_pass: "naneepappi@123",
       jwt_secret: "7cYF43X$33Mb143",
       domain: "https://mini-realestate-app.vercel.app/",
-      mysql_username: "sql6474609",
-      mysql_password: "1wXfL9vJyH",
-      mysql_dbname: "sql6474609",
+      mysql_username: "sql6478278",
+      mysql_password: "9HPHWzzPHi",
+      mysql_dbname: "sql6478278",
     },
   };
 };
