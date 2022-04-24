@@ -27,7 +27,7 @@ const otpGenerator = () => {
     singleDigitGenerator() +
     singleDigitGenerator();
 
-  return otp;
+  return String(otp);
 };
 
 export default otpGenerator;
