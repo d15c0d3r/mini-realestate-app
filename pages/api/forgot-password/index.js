@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 import db from "../../../helpers/db-connection";
 import otpGenerator, { optionsGenerator } from "../../../helpers/otp-generator";
+import bcrypt from "bcrypt";
 
 const transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
@@ -70,21 +71,74 @@ const handler = (req, res) => {
         return;
       }
       // hash the otp and update it as a password
-      const hashedPassword = otp;
+      
+      
+      
+      
+      
+      
+      bcrypt.hash(otp, 10, (err, hashedPassword) => {
+      if (err) {
+        res.status(500).json({
+          message: "Something wrong with the server, please try again later",
+        });
+        return;
+      }
       db.query(
         `UPDATE USERS SET PASSWORD = "${hashedPassword}" where EMAIL = "${email}"`,
         (error, result) => {
           if (error) {
             res
-              .status(500)
+              .status(501)
               .json({ message: "Something went wrong, try again later" });
             return;
           } else {
+              res.status(201).json({ message: "Password sent to your email" });
+              return;
           }
-        }
-      );
-      res.status(201).json({ message: "Password sent to your email" });
-      return;
+        });
+    });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+//       const hashedPassword = otp;
+//       db.query(
+//         `UPDATE USERS SET PASSWORD = "${hashedPassword}" where EMAIL = "${email}"`,
+//         (error, result) => {
+//           if (error) {
+//             res
+//               .status(500)
+//               .json({ message: "Something went wrong, try again later" });
+//             return;
+//           } else {
+//           }
+//         }
+//       );
+//       res.status(201).json({ message: "Password sent to your email" });
+//       return;
     });
   });
 };
